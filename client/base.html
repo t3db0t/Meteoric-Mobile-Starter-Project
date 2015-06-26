@@ -1,0 +1,29 @@
+<template name="tabsLayout">
+	{{#ionBody}}
+		{{> ionNavBar class="bar-positive"}}
+
+		{{#ionNavView}}
+			{{> yield}}
+
+		{{/ionNavView}}
+		{{> _tabs}}
+	{{/ionBody}}
+</template>
+
+<template name="_tabs">
+  {{#if isAndroid}}
+    {{#ionTabs style="android" class="tabs-background-positive tabs-color-light"}}
+      {{> ionTab title="Home" path="home" icon="android-home"}}
+      {{> ionTab title="Star" path="star" icon="android-star"}}
+      {{> ionTab title="Heart" path="heart" icon="heart"}}
+      {{> ionTab title="Gear" path="gear" icon="gear-b"}}
+    {{/ionTabs}}
+  {{else}}
+    {{#ionTabs style="ios" class="tabs-background-positive tabs-color-light"}}
+      {{> ionTab title="Home" path="home" iconOff="ios-home-outline" iconOn="ios-home"}}
+      {{> ionTab title="Star" path="star" iconOff="ios-star-outline" iconOn="ios-star"}}
+      {{> ionTab title="Heart" path="heart" iconOff="ios-heart-outline" iconOn="ios-heart"}}
+      {{> ionTab title="Gear" path="gear" iconOff="ios-gear-outline" iconOn="ios-gear"}}
+    {{/ionTabs}}
+  {{/if}}
+</template>
