@@ -1,10 +1,10 @@
-Template.star.created = function () {
+Template.starMobile.created = function () {
   this.autorun(function () {
     this.subscription = Meteor.subscribe('listItems');
   }.bind(this));
 };
 
-Template.star.rendered = function () {
+Template.starMobile.rendered = function () {
   this.autorun(function () {
     if (!this.subscription.ready()) {
       IonLoading.show();
@@ -14,7 +14,7 @@ Template.star.rendered = function () {
   }.bind(this));
 };
 
-Template.star.helpers({
+Template.starMobile.helpers({
   listItems:function(){
     return List.find();
   }

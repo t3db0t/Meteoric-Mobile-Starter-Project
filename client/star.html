@@ -1,26 +1,31 @@
 <template name="star">
 {{#if isPhone}}
-	{{#contentFor "headerTitle"}}
-		<h1 class="title">Star</h1>
-	{{/contentFor}}
+	{{> starMobile}}
+{{else}}
+	{{> starLarge}}
+{{/if}}
+</template>
 
-  {{#ionView}}
+<template name="starMobile">
+{{#contentFor "headerTitle"}}
+	<h1 class="title">Star</h1>
+{{/contentFor}}
+
+{{#ionView}}
     {{#ionContent}}
 		{{#ionList}}
 			{{#each listItems}}
 				{{#ionItem path="star.detail" buttonRight=true class="item-icon-right"}}
 					<h2>{{title}}</h2>
 					<p>{{_id}}</p>
-					<!-- {{> ionIcon icon="ios-arrow-right"}} -->
 					{{> ionIcon icon="ios-arrow-forward" class="positive"}}
 				{{/ionItem}}
 	        {{/each}}
 	    {{/ionList}}
     {{/ionContent}}
+{{/ionView}}
+</template>
 
-    <!-- {{> _tabs}} -->
-  {{/ionView}}
-{{else}}
-	Star
-{{/if}}
+<template name="starLarge">
+	starLarge
 </template>
