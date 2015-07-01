@@ -27,5 +27,10 @@
 </template>
 
 <template name="starLarge">
-	starLarge
+	{{#each listItems}}
+		<div class="listItem">
+			<h2>{{title}}</h2>
+			<p>{{_id}}</p>
+		</div>
+	{{/each}}
 </template>

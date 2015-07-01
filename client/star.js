@@ -1,8 +1,18 @@
-Template.starMobile.created = function () {
-  this.autorun(function () {
-    this.subscription = Meteor.subscribe('listItems');
-  }.bind(this));
-};
+// 'Universal' Star Functions
+
+function created(){
+	this.autorun(function () {
+    	this.subscription = Meteor.subscribe('listItems');
+  	}.bind(this));	
+}
+
+function listItems(){
+	return List.find();
+}
+
+// Mobile
+
+Template.starMobile.created = created;
 
 Template.starMobile.rendered = function () {
   this.autorun(function () {
@@ -15,7 +25,23 @@ Template.starMobile.rendered = function () {
 };
 
 Template.starMobile.helpers({
-  listItems:function(){
-    return List.find();
-  }
+  listItems:listItems
+});
+
+// Large
+
+Template.starLarge.created = created;
+
+Template.starLarge.rendered = function () {
+  this.autorun(function () {
+    if (!this.subscription.ready()) {
+      // show non-Ionic loading
+    } else {
+      // hide non-Ionic loading
+    }
+  }.bind(this));
+};
+
+Template.starLarge.helpers({
+  listItems:listItems
 });

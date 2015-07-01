@@ -7,8 +7,21 @@
 </template>
 
 <template name="largeLayout">
-  Large Layout
-  {{> yield}}
+<div class="largeLayoutContainer">
+  {{> largeHeader}}
+  <div class="largeLayoutContent">
+    {{> yield}}
+  </div>
+</div>
+</template>
+
+<template name="largeHeader">
+<div class="largeHeader">
+  <div class="lhItem">Home</div>
+  <div class="lhItem">Star</div>
+  <div class="lhItem">Heart</div>
+  <div class="lhItem">Gear</div>
+</div>
 </template>
 
 <template name="tabsLayout">

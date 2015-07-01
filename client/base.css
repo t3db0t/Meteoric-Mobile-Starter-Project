@@ -1,1 +1,28 @@
 /* CSS declarations go here */
+
+.largeLayoutContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.largeLayoutContent {
+	flex: auto;
+	overflow-y: auto;
+}
+
+.largeHeader {
+	height: 40px;
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: row;
+	background-color: blue;
+}
+
+.lhItem {
+	width: 60px;
+	color: white;
+}
+
+.listItem {
+	height:60px;
+}
