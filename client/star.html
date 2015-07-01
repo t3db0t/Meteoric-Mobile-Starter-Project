@@ -1,4 +1,5 @@
 <template name="star">
+{{#if isPhone}}
 	{{#contentFor "headerTitle"}}
 		<h1 class="title">Star</h1>
 	{{/contentFor}}
@@ -17,6 +18,9 @@
 	    {{/ionList}}
     {{/ionContent}}
 
-    {{> _tabs}}
+    <!-- {{> _tabs}} -->
   {{/ionView}}
+{{else}}
+	Star
+{{/if}}
 </template>
