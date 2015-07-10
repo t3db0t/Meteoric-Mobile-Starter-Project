@@ -17,10 +17,14 @@
 
 <template name="largeHeader">
 <div class="largeHeader">
-  <div class="lhItem">Home</div>
-  <div class="lhItem">Star</div>
-  <div class="lhItem">Heart</div>
-  <div class="lhItem">Gear</div>
+  <a href="/"><div class="lhItem">Home</div></a>
+  <a href="/star"><div class="lhItem">Star</div></a>
+  <a href="/heart"><div class="lhItem">Heart</div></a>
+  <a href="/gear"><div class="lhItem">Gear</div></a>
+
+  <div class="headerTitle">
+    {{> yield "headerTitle"}}
+  </div>
 </div>
 </template>
 

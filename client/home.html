@@ -1,4 +1,12 @@
 <template name="home">
+{{#if isPhone}}
+  {{> homeMobile}}
+{{else}}
+  {{> homeLarge}}
+{{/if}}
+</template>
+
+<template name="homeMobile">
   {{#ionView}}
 
     {{#ionContent class="padding"}}
@@ -6,10 +14,23 @@
 		  <h1 class="title">Home</h1>
 		{{/contentFor}}
     	
-    	<h1>Home</h1>
-    	<p>Touch on the tabs below to change sections</p>
+      {{> homeContent}}
+    	
     {{/ionContent}}
 
     <!-- {{> _tabs}} -->
   {{/ionView}}
+</template>
+
+<template name="homeLarge">
+  {{> homeContent}}
+</template>
+
+<template name="homeContent">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Home</h1>
+  {{/contentFor}}
+
+  <h1>Home</h1>
+  <p>Touch on the tabs below to change sections</p>
 </template>
