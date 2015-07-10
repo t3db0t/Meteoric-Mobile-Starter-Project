@@ -17,7 +17,6 @@
 			{{#each listItems}}
 				{{#ionItem path="star.detail" buttonRight=true class="item-icon-right"}}
 					<h2>{{title}}</h2>
-					<p>{{_id}}</p>
 					{{> ionIcon icon="ios-arrow-forward" class="positive"}}
 				{{/ionItem}}
 	        {{/each}}
@@ -27,10 +26,13 @@
 </template>
 
 <template name="starLarge">
-	{{#each listItems}}
-		<div class="listItem">
-			<h2>{{title}}</h2>
-			<p>{{_id}}</p>
-		</div>
-	{{/each}}
+{{#contentFor "headerTitle"}}
+	<h1 class="title">Star</h1>
+{{/contentFor}}
+
+{{#each listItems}}
+	<div class="listItem">
+		<h2>{{title}}</h2>
+	</div>
+{{/each}}
 </template>

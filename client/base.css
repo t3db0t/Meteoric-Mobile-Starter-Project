@@ -24,6 +24,7 @@ body {
 .largeLayoutContent {
 	flex: auto;
 	overflow-y: auto;
+	margin: 10px;
 }
 
 .largeHeader {
@@ -33,7 +34,6 @@ body {
 	flex-direction: row;
 	background-color: #8972B3;
 	align-items: center;
-
 }
 
 .lhItem {
@@ -43,6 +43,10 @@ body {
 	text-align: center;
 }
 
-.listItem {
-	height:60px;
+.headerTitle h1 {
+	color: white;
+	width:120px;
+	font-size: 24px;
+  	margin-bottom: 0px;
+  	text-align: center;
 }

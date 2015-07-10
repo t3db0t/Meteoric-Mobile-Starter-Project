@@ -1,14 +1,29 @@
 <template name="gear">
+{{#if isPhone}}
+	{{> gearMobile}}
+{{else}}
+	{{> gearLarge}}
+{{/if}}
+</template>
+
+<template name="gearMobile">
   {{#ionView}}
 
     {{#ionContent class="padding"}}
-    	{{#contentFor "headerTitle"}}
+    	{{> gearContent}}
+    {{/ionContent}}
+
+  {{/ionView}}
+</template>
+
+<template name="gearLarge">
+	{{> gearContent}}
+</template>
+
+<template name="gearContent">
+{{#contentFor "headerTitle"}}
 		  <h1 class="title">Gear</h1>
 		{{/contentFor}}
 
       <h1>Tab 4</h1>
-    {{/ionContent}}
-
-    <!-- {{> _tabs}} -->
-  {{/ionView}}
 </template>
